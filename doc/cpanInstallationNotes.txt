@@ -1,0 +1,16 @@
+cpan modules installed
+
+check if these two are indeed installed
+
+Net::OpenSSH 
+Net::SCP::Expect 
+
+TryCatch;
+POSIX;
+DBI;
+
+
+HTML::TableExtract
+Text::Table
+
+LWP
