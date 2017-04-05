@@ -1,4 +1,7 @@
-# format of a roll call vote, US House of Representatives
+
+# crawl house roll call data for a given year.
+
+# for format of a roll call vote, US House of Representatives, see
 # http://clerk.house.gov/evs/2014/roll480.xml
 
 pre=https://clerk.house.gov/evs
