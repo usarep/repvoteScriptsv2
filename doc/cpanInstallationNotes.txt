@@ -14,3 +14,6 @@ HTML::TableExtract
 Text::Table
 
 LWP
+XML::LibXML
+
+LWP::Protocol::https  -- probably not needed

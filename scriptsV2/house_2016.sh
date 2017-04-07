@@ -17,7 +17,7 @@ END=622
 # see http://stackoverflow.com/questions/8789729/zero-padding-in-bash
 # also http://stackoverflow.com/questions/169511/how-do-i-iterate-over-a-range-of-numbers-defined-by-variables-in-bash
 
-mkdir -p ${preDir}/${year}
+mkdir -p ${dest}/${year}
 
 for i in $(seq -f "%03g" $START $END); do
  echo ${pre}/${year}/roll${i}.xml ;

@@ -16,12 +16,10 @@ use LWP 5.64;
 use HTML::TableExtract;
 use Text::Table;
 
-my $url = 'http://clerk.house.gov/evs/2017/index.asp';
+require 'webUtil.pl';
 
-my $result = getLargestRollNum($url);
-say "result = $result" ;
 
-sub getLargestRollNum {
+sub getLargestRollNumHouse {
 
     my($url) = @_;
 
@@ -30,7 +28,7 @@ sub getLargestRollNum {
     try {
 
     
-        my $docStr = &fetch($url);
+        my $docStr = &fetchUrl($url);
 
         my $headers =  [ 'Roll' ]; # [ 'Roll', 'Issue', 'Question' ];
 
@@ -56,7 +54,7 @@ sub getLargestRollNum {
             
         }
  
-        say "largest roll num = $largestRollNum" ;
+        # say "largest roll num = $largestRollNum" ;
 
         # print $table_output;
 
@@ -70,33 +68,4 @@ sub getLargestRollNum {
 
 }  # getLargestRollNum
 
-sub fetch() {
-
-    my ($url) = @_;
-
-    my ($response);
-    # my ($doc) ;
-
-    try
-    {
-        my $browser = LWP::UserAgent->new;
-        $response = $browser->get( $url );
-
-        die "Can't get $url -- ", $response->status_line
-            unless $response->is_success;
-
-        die "Hey, I was expecting HTML, not ", $response->content_type
-            unless $response->content_type eq 'text/html';
-        # or whatever content-type you're equipped to deal with
-
-        # Otherwise, process the content
-        # $doc = $response->decoded_content ;
-        # print $doc ;
-    }
-    catch ($err) {
-        say "$err";
-    }
-
-    return ($response->decoded_content);
-
-}
+1;
