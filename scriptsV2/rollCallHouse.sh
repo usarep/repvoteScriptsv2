@@ -4,16 +4,16 @@
 # for format of a roll call vote, US House of Representatives, see
 # http://clerk.house.gov/evs/2014/roll480.xml
 
-pre=https://clerk.house.gov/evs
+pre=http://clerk.house.gov/evs
 
-dest=data/house.data ;
+dest=data.repvote/house.data ;
 
 
 year=$1 ;
 chamberId=1; # house == 1
 dbPasswd=$2;
 
-url='http://clerk.house.gov/evs/${year}/index.asp';
+# url='http://clerk.house.gov/evs/${year}/index.asp';
 
 START=`perl getLargestRollCall.pl ${year} ${chamberId} ${dbPasswd}` ;
 END=`perl fetchLargestRollHouse.pl ${year}` ;
@@ -30,8 +30,8 @@ if (( END >= START )); then
 
     for i in $(seq -f "%03g" $START $END); do
         echo ${pre}/${year}/roll${i}.xml ;
-        # file=roll${i}.xml ;
-        # curl -o ${dest}/${year}/${file}  ${pre}/${year}/${file} ;
+        file=roll${i}.xml ;
+        curl -o ${dest}/${year}/${file}  ${pre}/${year}/${file} ;
     done
 
     # save the largest roll call
