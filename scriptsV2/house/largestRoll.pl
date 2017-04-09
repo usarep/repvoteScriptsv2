@@ -16,10 +16,10 @@ use LWP 5.64;
 use HTML::TableExtract;
 use Text::Table;
 
-require 'webUtil.pl';
+require '../shared/webUtil.pl';
 
 
-sub getLargestRollNumHouse {
+sub getLargestRollNum {
 
     my($url) = @_;
 

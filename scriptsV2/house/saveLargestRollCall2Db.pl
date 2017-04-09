@@ -10,7 +10,7 @@ use TryCatch;
 use POSIX;
 use DBI;
 
-require 'dbUtil.pl' ;
+require 'dbHouse.pl' ;
 
 my (  $year, $chamberId, $largestRollCall,  $dbPasswd);
 
@@ -25,6 +25,6 @@ if ($#ARGV < 3) {
 	$dbPasswd = $ARGV[3];
 }
 
-my ($saveStatus) = &saveLastRollCallFetched($year, $chamberId, $largestRollCall, $dbPasswd);
+my ($saveStatus) = &saveLastRollCall2Db($year, $chamberId, $largestRollCall, $dbPasswd);
 
 say "$saveStatus";

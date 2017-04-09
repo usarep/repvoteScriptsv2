@@ -7,5 +7,5 @@ dbPasswd=$1;
 for year in $(seq -f "%03g" $YEAR_START $YEAR_END); do
     echo ${year} ;
 
-    bash -f ./rollCallHouse.sh ${year} ${dbPasswd} ;
+    bash -f ./rollCall.sh ${year} ${dbPasswd} ;
 done

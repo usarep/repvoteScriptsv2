@@ -10,7 +10,7 @@ use TryCatch;
 use POSIX;
 use DBI;
 
-require 'dbUtil.pl' ;
+require 'dbHouse.pl' ;
 
 my (  $year, $chamberId,  $dbPasswd);
 
@@ -24,7 +24,7 @@ if ($#ARGV < 2) {
 	$dbPasswd = $ARGV[2];
 }
 
-my ($id, $lastRollCall) = &lastRollCallFetched($year, $chamberId, $dbPasswd);
+my ($id, $lastRollCall) = &lastRollCallInDb($year, $chamberId, $dbPasswd);
 
 my $result;
 if ($lastRollCall < 0) {

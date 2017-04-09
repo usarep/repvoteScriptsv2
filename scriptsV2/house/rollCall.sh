@@ -15,8 +15,8 @@ dbPasswd=$2;
 
 # url='http://clerk.house.gov/evs/${year}/index.asp';
 
-START=`perl getLargestRollCall.pl ${year} ${chamberId} ${dbPasswd}` ;
-END=`perl fetchLargestRollHouse.pl ${year}` ;
+START=`perl getLargestRollCallFromDb.pl ${year} ${chamberId} ${dbPasswd}` ;
+END=`perl fetchLargestRoll.pl ${year}` ;
 
 echo START = ${START} ;
 echo END = ${END} ;
@@ -35,7 +35,7 @@ if (( END >= START )); then
     done
 
     # save the largest roll call
-    SAVE_STATUS=`perl saveLargestRollCall.pl ${year} ${chamberId} ${END} ${dbPasswd}` ;
+    SAVE_STATUS=`perl saveLargestRollCall2Db.pl ${year} ${chamberId} ${END} ${dbPasswd}` ;
     echo save status = $SAVE_STATUS
 
 else

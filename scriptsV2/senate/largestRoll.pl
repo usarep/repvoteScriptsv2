@@ -10,14 +10,14 @@ use POSIX;
 
 use XML::LibXML;
 
-require 'webUtil.pl';
+require '../shared/webUtil.pl';
 
 
 
 
 # example of how to use: http://grantm.github.io/perl-libxml-by-example/basics.html
 
-sub getLargestRollNumSenate {
+sub getLargestRollNum {
 
     my($url) = @_;
 

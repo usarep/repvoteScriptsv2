@@ -16,7 +16,7 @@ my $dsn ="dbi:mysql:dbname=rep_crawl_status;host=$dbHost";
 
 
 # params: year, chamberId, dbPasswd
-sub lastRollCallFetched() {
+sub lastRollCallInDb() {
     
     my ($year, $chamberId, $dbPasswd) = @_;
 
@@ -74,7 +74,7 @@ sub lastRollCallFetched() {
 }
 
 # params: year, chamberId, lastRollCall, dbPasswd
-sub saveLastRollCallFetched() {
+sub saveLastRollCall2Db() {
     
     my ($year, $chamberId, $lastRollCall, $dbPasswd) = @_;
      my $status = -1;
