@@ -1,0 +1,137 @@
+java webapp + db mismatch
+
+04-13-17 01:28:08 ERROR [http-bio-8080-exec-7] (BillSummaryDao.java:154) - Unknown column 'bill_id' in 'field list'
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'bill_id' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:407)
+	at com.mysql.jdbc.Util.getInstance(Util.java:382)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3593)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3525)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1986)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2140)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2626)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2111)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2273)
+	at repVote.obj.BillSummaryDao.getVmBillInfo(BillSummaryDao.java:146)
+	at repVote.obj.VoteMeta2BillBo.getData(VoteMeta2BillBo.java:42)
+	at repVote.web.action.VoteMetaId2BillIdAction.fetchData(VoteMetaId2BillIdAction.java:91)
+	at repVote.web.action.VoteMetaId2BillIdAction.executeWithData(VoteMetaId2BillIdAction.java:47)
+
+04-10-17 18:54:11 ERROR [localhost-startStop-1] (ChamberDataCache.java:128) - Unknown column 'v.bill_id' in 'field list'
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'v.bill_id' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:407)
+	at com.mysql.jdbc.Util.getInstance(Util.java:382)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3593)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3525)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1986)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2140)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2626)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2111)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2273)
+	at repVote.obj.AnalysisDao.readVoteMetaData(AnalysisDao.java:65)
+	at repVote.obj.ChamberDataCache.initialize(ChamberDataCache.java:123)
+	at repVote.obj.DataCache.initialize(DataCache.java:30)
+	at repVote.web.RepVoteController.loadData2(RepVoteController.java:168)
+	at repVote.web.RepVoteController.init(RepVoteController.java:70)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5231)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5518)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+04-10-17 18:54:11 ERROR [localhost-startStop-1] (ChamberDataCache.java:128) - Unknown column 'v.bill_id' in 'field list'
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'v.bill_id' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:407)
+	at com.mysql.jdbc.Util.getInstance(Util.java:382)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3593)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3525)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1986)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2140)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2626)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2111)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2273)
+	at repVote.obj.AnalysisDao.readVoteMetaData(AnalysisDao.java:65)
+	at repVote.obj.ChamberDataCache.initialize(ChamberDataCache.java:123)
+	at repVote.obj.DataCache.initialize(DataCache.java:30)
+	at repVote.web.RepVoteController.loadData2(RepVoteController.java:168)
+	at repVote.web.RepVoteController.init(RepVoteController.java:70)
+        
+
+
+
+roll call parsing, house.
+
+refetch 
+data.repvote/house.data/2007/roll742.xml  - done
+
+virtual_name_id table missing - fixed.
+
+data.repvote/bill.data/113/BILLSTATUS-113-s/BILLSTATUS-113s2450.xml
+
+(BillStatusDao.java:191) - Duplicate entry '113-2-2-187' for key 'congress'
+java.sql.BatchUpdateException: Duplicate entry '113-2-2-187' for key 'congress'
+        at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2018)
+        at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1449)
+        at repVote.obj.billstatus.BillStatusDao.saveBillRollCalls(BillStatusDao.java:993)
+        at repVote.obj.billstatus.BillStatusDao.save2Db(BillStatusDao.java:134)
+        at repVote.obj.billstatus.BillStatusHRDomXml.execute(BillStatusHRDomXml.java:382)
+        at repVote.io.BatchInputProcessor.ingestFile(BatchInputProcessor.java:80)
+        at repVote.io.BatchInputProcessor.ingestDir(BatchInputProcessor.java:58)
+        at repVote.io.BatchInputProcessor.main(BatchInputProcessor.java:153)
+
+
+fixed -- bad data. had to add a insert-ignore
+
+04-10-17 04:11:03  INFO [main] (BatchInputProcessor.java:56) - data.repvote/bill.data/114/BILLSTATUS-114-hr/BILLSTATUS-114hr240.xml start
+04-10-17 04:11:04 ERROR [main] (BillStatusDao.java:191) - Duplicate entry '114-1-2-57' for key 'congress'
+java.sql.BatchUpdateException: Duplicate entry '114-1-2-57' for key 'congress'
+        at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2018)
+        at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1449)
+        at repVote.obj.billstatus.BillStatusDao.saveBillRollCalls(BillStatusDao.java:993)
+        at repVote.obj.billstatus.BillStatusDao.save2Db(BillStatusDao.java:134)
+        at repVote.obj.billstatus.BillStatusHRDomXml.execute(BillStatusHRDomXml.java:382)
+        at repVote.io.BatchInputProcessor.ingestFile(BatchInputProcessor.java:80)
+        at repVote.io.BatchInputProcessor.ingestDir(BatchInputProcessor.java:58)
+        at repVote.io.BatchInputProcessor.main(BatchInputProcessor.java:153)
+
+
+fixed -- by removing all invisible chars before the first <xml
+04-10-17 04:14:42  INFO [main] (BatchInputProcessor.java:56) - data.repvote/bill.data/114/BILLSTATUS-114-hres/BILLSTATUS-114hres144.xml start
+04-10-17 04:14:42 ERROR [main] (DomainDomXml.java:110) - Content is not allowed in trailing section.
+org.xml.sax.SAXParseException; lineNumber: 224; columnNumber: 1; Content is not allowed in trailing section.
+        at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:257)
+        at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:348)
+        at domain.xml.dom.DomainDomXml.crawl(DomainDomXml.java:107)
+        at domain.xml.dom.DomainDomXml.crawl(DomainDomXml.java:34)
+        at repVote.obj.billstatus.BillStatusHRDomXml.fetchResult2(BillStatusHRDomXml.java:65)
+        at repVote.obj.billstatus.BillStatusHRDomXml.execute(BillStatusHRDomXml.java:364)
+        at repVote.io.BatchInputProcessor.ingestFile(BatchInputProcessor.java:80)
+        at repVote.io.BatchInputProcessor.ingestDir(BatchInputProcessor.java:58)
+        at repVote.io.BatchInputProcessor.main(BatchInputProcessor.java:153)
+04-10-17 04:14:42 ERROR [main] (BatchInputProcessor.java:84) - 
+java.lang.NullPointerException
+        at repVote.obj.billstatus.BillStatusHRDomXml.execute(BillStatusHRDomXml.java:366)
+        at repVote.io.BatchInputProcessor.ingestFile(BatchInputProcessor.java:80)
+        at repVote.io.BatchInputProcessor.ingestDir(BatchInputProcessor.java:58)
+        at repVote.io.BatchInputProcessor.main(BatchInputProcessor.java:153)
