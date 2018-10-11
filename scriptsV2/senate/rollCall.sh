@@ -36,6 +36,8 @@ if (( END >= START )); then
         firstPart=${pre}${congress}${sessionInt} ;
         file=vote_${congress}_${sessionInt}_${i}.xml ;
         echo ${firstPart}/${file} ;
+
+        # echo if testing... not writing. uncomment curl command to write
         curl -o ${dest}/${year}/${file}  ${firstPart}/${file} ;
 
     done

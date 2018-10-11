@@ -12,6 +12,7 @@ use DBI;
 
 require 'dbSenate.pl' ;
 
+
 my (  $congress, $sessionInt, $chamberId, $largestRollCall,  $dbPasswd);
 
 # $congress, $sessionInt, $chamberId,  $largestRollCall, $dbPasswd

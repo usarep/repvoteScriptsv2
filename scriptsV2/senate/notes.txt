@@ -1,0 +1,26 @@
+cpan install module
+
+http://www.cpan.org/modules/INSTALL.html
+
+ Quick start
+
+Install cpanm to make installing other modules easier (you'll thank us later). You need to type these commands into a Terminal emulator (Mac OS X, Win32, Linux)
+
+    cpan App::cpanminus
+
+Now install any module you can find.
+
+    cpanm Module::Name
+
+
+Install Config::Simple
+https://metacpan.org/pod/Config::Simple
+
+    cpanm Config::Simple
+
+config.pl
+reads in IS_TEST_DO_NOT_WRITE from app.cfg and provides the method isTestDoNotWrite()
+if the value is > 0, it's a test env,  do not change state. 
+
+see dbSenate.pl saveLastRollCall2Db() for example use.
+

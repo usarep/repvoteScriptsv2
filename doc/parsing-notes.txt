@@ -1,0 +1,47 @@
+https://www.congress.gov/treaty-document/114th-congress/12
+
+document number for Treat Docs could be of the form 114-12 
+(congress==114, docNumber==12)
+e.g., https://www.senate.gov/legislative/LIS/roll_call_votes/vote1151/vote_115_1_00097.xml
+
+The issue is shown on the roll-call summary page as Treaty Doc. 114-12
+https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_115_1.htm
+
+and the xml for the roll call has this fragment:
+
+<document>
+ <document_congress>115</document_congress>
+ <document_type>Treaty Doc.</document_type>
+ <document_number>114-12</document_number>
+ <document_name>Treaty Doc. 114-12</document_name>
+ <document_title>
+  Protocol to the North Atlantic Treaty of 1949 on the Accession of Montenegro
+  </document_title>
+  <document_short_title/>
+</document>
+
+quick and dirty solution:
+add roll_call_doc_number_str varchar(20) as a new column in the db.
+add a corresponding field in solr.
+and also in solr-queries.
+in front end, if rollCallDocNumStr is there, use it. create a link directly
+to the treaty doc on congress.gov, format:
+https://www.congress.gov/treaty-document/114th-congress/12
+
+TODO:
+serve an amendment doc (similar to getBillSummary() ).
+indiv result: show by policy-area for congress >= 113, and keyword for congress < 113.
+indiv result: show recent roll_call_votes
+
+cache absence data in a db table.
+welcome page
+share: 
+  share a particular rep vote, or a comparison-vote
+  or share a rep's votes, or two reps' comparison votes.
+  share the site.
+
+  share on fb, reddit, twitter, linkedin.
+
+  embed: a specific rep vote, or rep votes, or a comparison vote, or collection of comparison votes
+
+  

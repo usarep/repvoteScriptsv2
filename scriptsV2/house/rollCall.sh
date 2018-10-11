@@ -31,6 +31,8 @@ if (( END >= START )); then
     for i in $(seq -f "%03g" $START $END); do
         echo ${pre}/${year}/roll${i}.xml ;
         file=roll${i}.xml ;
+        
+        # echo testing, curl call commented out ;
         curl -o ${dest}/${year}/${file}  ${pre}/${year}/${file} ;
     done
 

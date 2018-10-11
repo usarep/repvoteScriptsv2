@@ -1,3 +1,71 @@
+
+lis_id  is used in senate roll call.
+bioguideid in house roll call
+bioguideid is also used in sponsor/co-sponsor -- for both house and senate
+we have been using "name_id" in representative table. and everywhere
+else in the web app. also, so far, name_id has been unique. and it has corrsponded
+to a house chamber.
+
+rep_detail has data on all legislators, past and present. 
+
+in there, someone like bernie sanders has one bioguideid, but has been on both
+houses
+
+so one solution is:
+
+let rep_detail record lis_id, bioguideid, etc. for each legislator. 
+one record only for bernie sanders in rep_detail.
+
+let representative be the table that it is today. it's data comes from roll calls.
+
+in getReps() api call, make sure each rep has a mapping between bioguideid and name_id
+for a given chamber.
+
+let name_id be legis_num for senators, and bioguideid for house. 
+whatever works now in the web app should continue to work.
+
+on a click on a sponsor/co-sponsor, we have the bioguideid. 
+if it's a senator, look up the corresponding legis_num and issue an api
+request for 2-<name_id> 
+
+
+investigate nameId conflicts.
+susan collins 
+
+in amendment 114/SAmdt/4858
+
+bill is HR 2578, 114 congress
+
+sponsors : Array[1]
+
+firstName : "SUSAN"
+fullName : "Sen. Collins, Susan M. [R-ME]"
+lastName : "COLLINS"
+middleName : "MARGARET"
+nameId : "C001035"
+party : "R"
+state : "ME"
+
+but in roll calls, she is S252
+https://www.senate.gov/legislative/LIS/roll_call_votes/vote1151/vote_115_1_00111.xml
+
+<member>
+ <member_full>Collins (R-ME)</member_full>
+ <last_name>Collins</last_name>
+ <first_name>Susan</first_name>
+ <party>R</party>
+ <state>ME</state>
+ <vote_cast>Yea</vote_cast>
+ <lis_member_id>S252</lis_member_id>
+</member>
+
+ Collins (GA) and Collins (NY) are House members.
+ view-source:http://clerk.house.gov/evs/2017/roll221.xml
+
+<recorded-vote><legislator name-id="C001093" sort-field="Collins (GA)" unaccented-name="Collins (GA)" party="R" state="GA" role="legislator">Collins (GA)</legislator><vote>Yea</vote></recorded-vote>
+<recorded-vote><legislator name-id="C001092" sort-field="Collins (NY)" unaccented-name="Collins (NY)" party="R" state="NY" role="legislator">Collins (NY)</legislator><vote>Yea</vote></recorded-vote>
+
+
 java webapp + db mismatch
 
 04-13-17 01:28:08 ERROR [http-bio-8080-exec-7] (BillSummaryDao.java:154) - Unknown column 'bill_id' in 'field list'

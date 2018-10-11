@@ -10,6 +10,8 @@ use TryCatch;
 use POSIX;
 use DBI;
 
+require 'config.pl' ;
+
 my $dbHost='localhost';
 my $dbUser = 'repvote';
 my $dsn ="dbi:mysql:dbname=rep_crawl_status;host=$dbHost";
@@ -75,6 +77,18 @@ sub lastRollCallInDb() {
 
 # params: year, chamberId, lastRollCall, dbPasswd
 sub saveLastRollCall2Db() {
+
+    if (isTestDoNotWrite() ) {
+        say "isTestDoNotWrite is true, not writing";
+        return 0;
+    } 
+
+    # else {
+       # say "isTestDoNotWrite is false, returning anyway";
+       # return -1;
+    # }
+
+    # say "should not come here!";
     
     my ($year, $chamberId, $lastRollCall, $dbPasswd) = @_;
      my $status = -1;
