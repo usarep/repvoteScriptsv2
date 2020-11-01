@@ -11,7 +11,7 @@ for congress in $(seq -f "%03g" $CONGRESS_START $CONGRESS_END); do
     echo congress=${congress} ;
 
     # for sessionInt in 1 2; do
-    for sessionInt in 1 ; do
+    for sessionInt in 2 ; do
 
     echo session=${sessionInt}
     bash -f ./rollCall.sh ${congress}  ${sessionInt} ${dbPasswd} ;
